@@ -1,6 +1,7 @@
 # THECNICAL NOTES
+- Hello, welcome to my notebook of how to install things, I often get lost between Windows, MacOS and Linux operating systems, so to write down is to remember. Thanks.
 
-How to install composer in Mac OS
+### **How to install composer in Mac OS**
 To quickly install Composer in the current directory, run the following script in your terminal.
 
 - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
