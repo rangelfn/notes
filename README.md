@@ -16,7 +16,7 @@ Most likely, you want to put the composer.phar into a directory on your PATH, so
 ### **Setting up a local web server on macOS 10.15 Catalina**
 This User Tip only contains instructions for configuring the Apache server, PHP module, and Perl module.
 
-- sudo vi /etc/apache2/httpd.conf
+- sudo nano /etc/apache2/httpd.conf
 
   Enable PHP by uncommenting lines 183, 186, 187 and 520 (remove #) 
 - #LoadModule userdir_module libexec/apache2/mod_userdir.so
@@ -24,3 +24,25 @@ This User Tip only contains instructions for configuring the Apache server, PHP 
 - #LoadModule perl_module libexec/apache2/mod_perl.so
 - #Include /private/etc/apache2/extra/httpd-userdir.conf
 
+you will need to create it with:
+- sudo vi /etc/apache2/users/<your short-user-name>.conf
+you will need to create it with:
+
+Use the following as the content:
+  <Directory "/Users/<your short-user-name>/Sites/">
+    AddLanguage en .en 
+      AddHandler perl-script .pl 
+      PerlHandler ModPerl::Registry
+      Options Indexes MultiViews FollowSymLinks ExecCGI 
+      AllowOverride None 
+    Require host localhost
+  </Directory>
+
+Check your configuration by running the following command in the Terminal:
+- apachectl configtest
+
+Turn on the Apache httpd service by running the following command in the Terminal:
+- sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+In your browse, navigate to your web site with the following address:
+- http://localhost/
