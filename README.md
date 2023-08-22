@@ -1,7 +1,6 @@
 # THECNICAL NOTES
 - Hello, welcome to my notebook of how to install things, I often get lost between Windows, MacOS and Linux operating systems, so to write down is to remember. Thanks.
 
-<br>
 ### **How to install composer in Mac OS**
 To quickly install Composer in the current directory, run the following script in your terminal.
 ```
@@ -10,12 +9,10 @@ To quickly install Composer in the current directory, run the following script i
 - php composer-setup.php
 - php -r "unlink('composer-setup.php');"
 ```
-<br>
 Most likely, you want to put the composer.phar into a directory on your PATH, so you can simply call composer from any directory (Global install), using for example:
 ```
 - sudo mv composer.phar /usr/local/bin/composer
 ```
-<br>
 ### **Setting up a local web server on macOS 10.15 Catalina**
 This User Tip only contains instructions for configuring the Apache server, PHP module, and Perl module.
 ```
@@ -63,7 +60,6 @@ In your browse, navigate to your web site with the following address:
 ```
 - http://localhost/
 ```
-<br>
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
