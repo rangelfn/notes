@@ -13,7 +13,7 @@ Most likely, you want to put the composer.phar into a directory on your PATH, so
 
 - sudo mv composer.phar /usr/local/bin/composer
 
-### ** Setting up a local web server on macOS 10.15 Catalina **
+### **Setting up a local web server on macOS 10.15 Catalina**
 This User Tip only contains instructions for configuring the Apache server, PHP module, and Perl module.
 
 - sudo vi /etc/apache2/httpd.conf
