@@ -29,6 +29,7 @@ you will need to create it with:
 you will need to create it with:
 
 Use the following as the content:
+  ```
   <Directory "/Users/<your short-user-name>/Sites/">
     AddLanguage en .en 
       AddHandler perl-script .pl 
@@ -37,7 +38,7 @@ Use the following as the content:
       AllowOverride None 
     Require host localhost
   </Directory>
-
+  ```
 Check your configuration by running the following command in the Terminal:
 - apachectl configtest
 
@@ -46,3 +47,12 @@ Turn on the Apache httpd service by running the following command in the Termina
 
 In your browse, navigate to your web site with the following address:
 - http://localhost/
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
