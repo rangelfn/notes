@@ -1,0 +1,2 @@
+# notes
+how to install
