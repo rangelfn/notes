@@ -1,34 +1,30 @@
 # THECNICAL NOTES
 Hello, welcome to my notebook of how to install things, I often get lost between Windows, MacOS and Linux operating systems, so to write down is to remember. Thanks.
 
-### **How to install composer in Mac OS**
-Instalação do APR (Apache Portable Runtime) e APR-util:
-
+### **How to build manual apache in Mac OS Sonoma**
 Baixar o APR e o APR-util:
 APR: http://apr.apache.org/download.cgi
-APR-util: http://apr.apache.org/download.cgi
+APR-util: http://apr.apache.org/download.cgi 
 
-Extrair e compilar o APR:
-
+**Extract and compile APR:**
 ```
-tar -xzf apr-x.y.z.tar.gz
-cd apr-x.y.z
-./configure
-make
-sudo make install
-```
-
-
-Extrair e compilar o APR-util:
-```
-tar -xzf apr-util-x.y.z.tar.gz
-cd apr-util-x.y.z
-./configure --with-apr=/usr/local/apr
-make
-sudo make install
+- tar -xzf apr-x.y.z.tar.gz
+- cd apr-x.y.z
+- ./configure
+- make
+- sudo make install
 ```
 
-Compilação do PCRE (Perl Compatible Regular Expressions):
+**Extract and compile APR-util:**
+```
+- tar -xzf apr-util-x.y.z.tar.gz
+- cd apr-util-x.y.z
+- ./configure --with-apr=/usr/local/apr
+- make
+- sudo make install
+```
+
+**Compilação do PCRE (Perl Compatible Regular Expressions):**
 Baixar o PCRE:
 GitHub oficial ou outro repositório confiável.
 Extrair e compilar o PCRE:
