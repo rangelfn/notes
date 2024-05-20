@@ -59,9 +59,10 @@ sudo /usr/local/apache2/bin/apachectl start
 export PATH="/usr/local/apache2/bin:$PATH"
 source ~/.zshrc *OR* source ~/.bashrc
 ```
-**STEP SIX - After making these changes, restart Terminal for the new PATH settings to take effect.**
+**STEP SIX - After making these changes, restart Terminal for the new PATH settings to take effect and check your status. **
 ```
 sudo apachectl restart
+curl -IL http://localhost
 ```
 
 > [!NOTE]
