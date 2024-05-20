@@ -2,7 +2,7 @@
 
 - Description: This command checks the current running Apache configuration and displays important information such as root directories, log files, and Apache users and groups.
 
-````
+```
 sudo apachectl -t -D DUMP_RUN_CFG
 ```
 
@@ -12,7 +12,7 @@ sudo apachectl -t -D DUMP_RUN_CFG
 sudo apachectl stop
 ````
 
-Description: This command lists all processes running on the system that contain "httpd" in their name. It is useful for checking whether Apache is running and identifying its processes.
+Description: This command lists all processes running on the system that contain HTTPD in their name. It is useful for checking whether Apache is running and identifying its processes.
 
 ```
 ps aux | grep httpd
