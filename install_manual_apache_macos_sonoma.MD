@@ -1,12 +1,16 @@
-# THECNICAL NOTES
+# BUILD AND MANUAL INSTALL APACHE IN MACOS SONOMA
 Hello, welcome to my notebook of how to install things, I often get lost between Windows, MacOS and Linux operating systems, so to write down is to remember. Thanks.
 
 ### **How to build manual apache in Mac OS Sonoma**
-Baixar o APR e o APR-util:
-APR: http://apr.apache.org/download.cgi
-APR-util: http://apr.apache.org/download.cgi 
+STEP ONE - Please download the files APR, APR-util, PCRE and HTTP Server :
 
-**Extract and compile APR:**
+** LINKS **
+- APR: http://apr.apache.org/download.cgi
+- APR-util: http://apr.apache.org/download.cgi
+- PCRE - https://www.pcre.org/
+- HTTPD SERVER - http://httpd.apache.org/download.cgi
+
+** STEP TWO - Extract and compile APR:**
 ```
 - tar -xzf apr-x.y.z.tar.gz
 - cd apr-x.y.z
@@ -15,7 +19,7 @@ APR-util: http://apr.apache.org/download.cgi
 - sudo make install
 ```
 
-**Extract and compile APR-util:**
+** STEP THREE - Extract and compile APR-util:**
 ```
 - tar -xzf apr-util-x.y.z.tar.gz
 - cd apr-util-x.y.z
@@ -24,37 +28,25 @@ APR-util: http://apr.apache.org/download.cgi
 - sudo make install
 ```
 
-**Compilação do PCRE (Perl Compatible Regular Expressions):**
-Baixar o PCRE:
-GitHub oficial ou outro repositório confiável.
-Extrair e compilar o PCRE:
+** STEP THREE - Extract and compile PCRE (Perl Compatible Regular Expressions):**
 ```
-tar -xzf pcre-x.y.tar.gz
-cd pcre-x.y
-./configure
-make
-sudo make install
+- tar -xzf pcre-x.y.tar.gz
+- cd pcre-x.y
+- ./configure
+- make
+- sudo make install
 ```
 
-Configuração e compilação do Apache:
-Baixar o Apache HTTP Server:
-
-http://httpd.apache.org/download.cgi
-Extrair e configurar o Apache:
+** STEP THREE - Extract and compile HTTTPD SEVER: **
 ```
-tar -xzf httpd-x.y.z.tar.gz
-cd httpd-x.y.z
-./configure --enable-so --enable-mods-shared=all --prefix=/usr/local/apache2 --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr/bin/apu-1-config --with-pcre
+- tar -xzf httpd-x.y.z.tar.gz
+- cd httpd-x.y.z
+- ./configure --enable-so --enable-mods-shared=all --prefix=/usr/local/apache2 --with-apr=/usr/local/apr --with-- - apr-util=/usr/local/apr/bin/apu-1-config --with-pcre
+- make
+- sudo make install
 ```
 
-Compilar e instalar o Apache:
-```
-make
-sudo make install
-```
-
-Reiniciar o Apache:
+** RESTAR Apache: **
 ```
 sudo /usr/local/apache2/bin/apachectl restart
-Esse resumo contém os principais comandos e etapas que executamos até agora para configurar o Apache em seu sistema. Se precisar de mais detalhes ou tiver alguma dúvida, estou à disposição para ajudar!
 ```
