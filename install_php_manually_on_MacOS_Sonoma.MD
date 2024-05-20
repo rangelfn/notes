@@ -1,9 +1,9 @@
 ### **How to manually build and install PHP in Mac OS Sonoma**
 STEP ONE - Download Automake, Libtool, Autoconf, M4, Pkg-config,
-GLib until reaching PHP. I recommend that you use the releases that
-specify here, why there are conflicts between release versions, this
-left me sleepless for days. Follow the order below as there are
-dependencies.
+Getext, GLib until reaching PHP. I recommend that you use the
+releases that specify here, why there are conflicts between
+release versions, this left me sleepless for days. Follow the
+order below as there are dependencies.
 
 ** LINKS AND RELESES**
 - AUTOMAKE (automake-1.16.5) https://ftp.gnu.org/gnu/automake/
@@ -11,6 +11,8 @@ dependencies.
 - AUTOCONF (autoconf-latest) https://ftp.gnu.org/gnu/autoconf/
 - (m4-latest) https://ftp.gnu.org/gnu/m4/
 - PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
+- GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
+- 
 
 ** STEP TWO - Extract and compile APR:**
 ```
