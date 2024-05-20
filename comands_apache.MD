@@ -1,15 +1,11 @@
-apachectl start:
+**sudo apachectl -t -D DUMP_RUN_CFG:**
+Descrição: Esse comando verifica a configuração atual do Apache em execução e exibe informações importantes, como diretórios raiz, arquivos de log e usuários e grupos do Apache.
 
-Inicia o servidor Apache.
-apachectl stop:
+**sudo apachectl stop:**
+Descrição: Este comando para o serviço Apache em execução. Ele interrompe todos os processos Apache que estão em execução no momento.
 
-Para o servidor Apache.
-apachectl restart:
+**ps aux | grep httpd:**
+Descrição: Esse comando lista todos os processos em execução no sistema que contêm "httpd" em seu nome. É útil para verificar se o Apache está em execução e identificar seus processos.
 
-Reinicia o servidor Apache. É equivalente a parar e iniciar novamente o Apache.
-apachectl -t:
-
-Testa a configuração do arquivo de configuração do Apache para garantir que não haja erros de sintaxe.
-apachectl -t -D DUMP_RUN_CFG:
-
-Exibe informações sobre a configuração atual do Apache em execução, como o diretório raiz do servidor, o log de erros principal, o usuário e grupo de execução, entre outros.
+**sudo kill -9 <PID_do_Apache>:**
+Descrição: Este comando força o encerramento de um processo específico do Apache. É útil quando o comando de parada normal (sudo apachectl stop) falha em parar o Apache.
