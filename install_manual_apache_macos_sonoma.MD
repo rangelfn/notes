@@ -1,7 +1,4 @@
-# BUILD AND MANUAL INSTALL APACHE IN MACOS SONOMA
-Hello, welcome to my notebook of how to install things, I often get lost between Windows, MacOS and Linux operating systems, so to write down is to remember. Thanks.
-
-### **How to build manual apache in Mac OS Sonoma**
+### **How to manually build and install apache in Mac OS Sonoma**
 STEP ONE - Please download the files APR, APR-util, PCRE and HTTP Server :
 
 ** LINKS **
