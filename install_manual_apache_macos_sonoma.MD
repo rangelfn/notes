@@ -43,9 +43,25 @@ STEP ONE - Please download the files APR, APR-util, PCRE and HTTP Server :
 - sudo make install
 ```
 
-** RESTAR Apache: **
+**STEP FOUR - Make sure all Apache services are stopped, disable Apache in the /etc/apache2 directory and check whether Apache in the /etc/apache2 directory has been disabled:
 ```
-sudo /usr/local/apache2/bin/apachectl restart
+sudo apachectl stop
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo launchctl list | grep apache
+```
+
+
+** SETP FIVE - Start installed Apache manually. Add the manually installed Apache directory (/usr/local/apache2/bin) to your PATH. After saving the file, you can reload the shell settings by running:
+
+ **
+```
+sudo /usr/local/apache2/bin/apachectl start
+export PATH="/usr/local/apache2/bin:$PATH"
+source ~/.zshrc *OR* source ~/.bashrc
+```
+**STEP SIX - After making these changes, restart Terminal for the new PATH settings to take effect.**
+```
+sudo apachectl restart
 ```
 
 > [!NOTE]
