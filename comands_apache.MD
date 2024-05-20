@@ -1,11 +1,31 @@
-**sudo apachectl -t -D DUMP_RUN_CFG:**
-- Descrição: Esse comando verifica a configuração atual do Apache em execução e exibe informações importantes, como diretórios raiz, arquivos de log e usuários e grupos do Apache.
+###**MY COMANDS LINE FOR APACHE**
 
-**sudo apachectl stop:**
-- Descrição: Este comando para o serviço Apache em execução. Ele interrompe todos os processos Apache que estão em execução no momento.
+- Description: This command checks the current running Apache configuration and displays important information such as root directories, log files, and Apache users and groups.
+````
+sudo apachectl -t -D DUMP_RUN_CFG
+```
 
-**ps aux | grep httpd:**
-- Descrição: Esse comando lista todos os processos em execução no sistema que contêm "httpd" em seu nome. É útil para verificar se o Apache está em execução e identificar seus processos.
+- Description: This command stops the running Apache service. It stops all Apache processes that are currently running.
+```
+sudo apachectl stop
+````
 
-**sudo kill -9 <PID_do_Apache>:**
-- Descrição: Este comando força o encerramento de um processo específico do Apache. É útil quando o comando de parada normal (sudo apachectl stop) falha em parar o Apache.
+Description: This command lists all processes running on the system that contain "httpd" in their name. It is useful for checking whether Apache is running and identifying its processes.
+```
+ps aux | grep httpd
+```
+
+- Description: This command forces the termination of a specific Apache process. It is useful when the normal stop command (sudo apachectl stop) fails to stop Apache.
+````
+sudo kill -9 <PID_do_Apache>
+```
+
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
