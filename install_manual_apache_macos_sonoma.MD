@@ -47,3 +47,13 @@ STEP ONE - Please download the files APR, APR-util, PCRE and HTTP Server :
 ```
 sudo /usr/local/apache2/bin/apachectl restart
 ```
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
