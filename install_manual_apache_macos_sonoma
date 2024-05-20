@@ -1,0 +1,58 @@
+Instalação do APR (Apache Portable Runtime) e APR-util:
+Baixar o APR e o APR-util:
+
+APR: http://apr.apache.org/download.cgi
+APR-util: http://apr.apache.org/download.cgi
+Extrair e compilar o APR:
+
+bash
+Copiar código
+tar -xzf apr-x.y.z.tar.gz
+cd apr-x.y.z
+./configure
+make
+sudo make install
+Extrair e compilar o APR-util:
+
+bash
+Copiar código
+tar -xzf apr-util-x.y.z.tar.gz
+cd apr-util-x.y.z
+./configure --with-apr=/usr/local/apr
+make
+sudo make install
+Compilação do PCRE (Perl Compatible Regular Expressions):
+Baixar o PCRE:
+
+GitHub oficial ou outro repositório confiável.
+Extrair e compilar o PCRE:
+
+bash
+Copiar código
+tar -xzf pcre-x.y.tar.gz
+cd pcre-x.y
+./configure
+make
+sudo make install
+Configuração e compilação do Apache:
+Baixar o Apache HTTP Server:
+
+http://httpd.apache.org/download.cgi
+Extrair e configurar o Apache:
+
+bash
+Copiar código
+tar -xzf httpd-x.y.z.tar.gz
+cd httpd-x.y.z
+./configure --enable-so --enable-mods-shared=all --prefix=/usr/local/apache2 --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr/bin/apu-1-config --with-pcre
+Compilar e instalar o Apache:
+
+bash
+Copiar código
+make
+sudo make install
+Reiniciar o Apache:
+bash
+Copiar código
+sudo /usr/local/apache2/bin/apachectl restart
+Esse resumo contém os principais comandos e etapas que executamos até agora para configurar o Apache em seu sistema. Se precisar de mais detalhes ou tiver alguma dúvida, estou à disposição para ajudar!
