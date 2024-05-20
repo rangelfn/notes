@@ -20,7 +20,7 @@ ps aux | grep httpd
 
 - Description: This command forces the termination of a specific Apache process. It is useful when the normal stop command (sudo apachectl stop) fails to stop Apache.
 
-````
+```
 sudo kill -9 <PID_do_Apache>
 ```
 
