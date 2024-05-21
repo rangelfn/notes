@@ -85,27 +85,8 @@ Follow the order below as there are dependencies.
 - gettext --version
 ```
 
-**STEP SEVEN - Extract, install and verify GLIB: **
-```
-sudo apachectl stop
-sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo launchctl list | grep apache
-```
+**I stopped here today**
 
-
-** SETP FIVE - Start installed Apache manually. Add the manually installed Apache directory (/usr/local/apache2/bin) to your PATH. After saving the file, you can reload the shell settings by running:
-
- **
-```
-sudo /usr/local/apache2/bin/apachectl start
-export PATH="/usr/local/apache2/bin:$PATH"
-source ~/.zshrc *OR* source ~/.bashrc
-```
-**STEP SIX - After making these changes, restart Terminal for the new PATH settings to take effect and check your status. **
-```
-sudo apachectl restart
-curl -IL http://localhost
-```
 
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
