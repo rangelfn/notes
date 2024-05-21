@@ -8,49 +8,73 @@ order below as there are dependencies.
 ** LINKS AND RELESES**
 - AUTOMAKE (automake-1.16.5) https://ftp.gnu.org/gnu/automake/
 - LIBTOOL (libtool-2.4.7) https://ftp.gnu.org/gnu/libtool/
-- AUTOCONF (autoconf-latest) https://ftp.gnu.org/gnu/autoconf/
-- (m4-latest) https://ftp.gnu.org/gnu/m4/
+- AUTOCONF (autoconf-2.72) https://ftp.gnu.org/gnu/autoconf/
+- M4 (m4-1.4.19) https://ftp.gnu.org/gnu/m4/
 - PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
 - GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
 - 
 
-** STEP TWO - Extract and compile APR:**
+** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
-- tar -xzf apr-x.y.z.tar.gz
-- cd apr-x.y.z
+- tar -xzf automake-1.16.5.tar.xz
+- cd automake-1.16.5
 - ./configure
 - make
 - sudo make install
+- automake --version 
 ```
 
-** STEP THREE - Extract and compile APR-util:**
+** STEP THREE - Extract, install and verify LIBTOOL:**
 ```
-- tar -xzf apr-util-x.y.z.tar.gz
-- cd apr-util-x.y.z
-- ./configure --with-apr=/usr/local/apr
-- make
-- sudo make install
-```
-
-** STEP THREE - Extract and compile PCRE (Perl Compatible Regular Expressions):**
-```
-- tar -xzf pcre-x.y.tar.gz
-- cd pcre-x.y
+- tar -xzf libtool-2.4.7.tar.xz
+- cd libtool-2.4.7
 - ./configure
 - make
 - sudo make install
+- libtool --version 
 ```
 
-** STEP THREE - Extract and compile HTTTPD SEVER: **
+** STEP FOUR - Extract, install and verify AUTOCONF:**
 ```
-- tar -xzf httpd-x.y.z.tar.gz
-- cd httpd-x.y.z
-- ./configure --enable-so --enable-mods-shared=all --prefix=/usr/local/apache2 --with-apr=/usr/local/apr --with-- - apr-util=/usr/local/apr/bin/apu-1-config --with-pcre
+- tar -xzf autoconf-2.72.tar.xz
+- cd autoconf-2.72
+- ./configure
 - make
 - sudo make install
+- autoconf --version
 ```
 
-**STEP FOUR - Make sure all Apache services are stopped, disable Apache in the /etc/apache2 directory and check whether Apache in the /etc/apache2 directory has been disabled:
+** STEP FIVE - Extract, install and verify M4: **
+```
+- tar -xzf m4-1.4.19.tar.xz
+- cd m4-1.4.19
+- ./configure 
+- make
+- sudo make install
+- m4 --version
+```
+
+** STEP SIX - Extract, install and verify PKG-CONFIG: **
+```
+- tar -xzf pkg-config-0.29.2.tar.gz
+- cd pkg-config-0.29.2
+- CFLAGS="-Wno-int-conversion" CXXFLAGS="-Wno-int-conversion" ./configure --prefix="/usr/local" --with-pc-path="/usr/local/lib/pkgconfig" --with-internal-glib
+- make
+- sudo make install
+- pkg-config --version
+```
+
+** STEP SIX - Extract, install and verify GETTEXT: **
+```
+- tar -xzf gettext-0.22.5.tar.gz
+- cd gettext-0.22.5
+- ./configure 
+- make
+- sudo make install
+- gettext --version
+```
+
+**STEP SEVEN - Extract, install and verify GLIB: **
 ```
 sudo apachectl stop
 sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
