@@ -16,6 +16,7 @@ Follow the order below as there are dependencies.
 - LIBXML2 (libxml2-2.9.14) https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
 - SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
 - LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
+- OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
 - PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
@@ -116,11 +117,21 @@ Follow the order below as there are dependencies.
 - sudo make install
 ```
 
-** STEP TEN - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
+** STEP TEN - Extract, install and verify OPENSSL: **
+```
+- tar -xzvf openssl-1.1.1w.tar.gz
+- cd openssl-1.1.1w
+- ./config --prefix=/usr/local/openssl
+- make
+- sudo make install
+```
+
+** STEP ELEVEN - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
 ```
 - export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 - source ~/.zshrc # ou source ~/.bash_profile
 ```
+
 
 ** FINAL STEP - Extract, install and verify PHP: **
 - tar -xzvf php-8.3.7.tar.gz
@@ -148,7 +159,6 @@ Follow the order below as there are dependencies.
 - make
 - sudo make install
 - php -v
-
 
 ** Very good, now you have php installed, if you want to install composer, read this note. **
 
