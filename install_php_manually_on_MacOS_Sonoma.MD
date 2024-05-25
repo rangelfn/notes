@@ -125,7 +125,26 @@ Follow the order below as there are dependencies.
 ** FINAL STEP - Extract, install and verify PHP: **
 - tar -xzvf php-8.3.7.tar.gz
 - cd ~/Downloads/php-8.3.7
-- ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php --with-iconv=/usr/local
+- ./configure --with-apxs2=/usr/local/apache2/bin/apxs \
+            --with-config-file-path=/usr/local/php \
+            --with-config-file-scan-dir=/usr/local/php/conf.d \
+            --with-mysqli \
+            --with-pdo-mysql \
+            --with-openssl \
+            --with-zlib \
+            --with-curl \
+            --with-gd \
+            --with-jpeg \
+            --with-freetype \
+            --with-zip \
+            --enable-mbstring \
+            --enable-exif \
+            --enable-intl \
+            --enable-soap \
+            --enable-bcmath \
+            --enable-ftp \
+            --enable-sockets \
+            --enable-opcache
 - make
 - sudo make install
 - php -v
