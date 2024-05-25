@@ -128,10 +128,17 @@ Follow the order below as there are dependencies.
 
 ** STEP ELEVEN - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
 ```
+- export PATH="/usr/local/openssl/bin:$PATH"
+- export LDFLAGS="-L/usr/local/openssl/lib"
+- export CPPFLAGS="-I/usr/local/openssl/include"
+- export PKG_CONFIG_PATH="/usr/local/openssl/lib/pkgconfig"
 - export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-- source ~/.zshrc # ou source ~/.bash_profile
 ```
 
+** Reload environment variables: **
+```
+- source ~/.zshrc
+```
 
 ** FINAL STEP - Extract, install and verify PHP: **
 - tar -xzvf php-8.3.7.tar.gz
