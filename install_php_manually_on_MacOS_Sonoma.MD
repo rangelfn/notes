@@ -13,12 +13,13 @@ Follow the order below as there are dependencies.
 - PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
 - GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
 - LIBATOMIC_OPS (libatomic_ops-7.8.2) https://github.com/ivmai/libatomic_ops/releases
-- GLIB (xxx) xxx
+- LIBXML2 (libxml2-2.9.14) https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
+- SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
-- tar -xzf automake-1.16.5.tar.xz
-- cd automake-1.16.5
+- tar -xzvf sqlite-autoconf-3410000.tar.gz
+- ccd sqlite-autoconf-3410000
 - ./configure
 - make
 - sudo make install
@@ -29,7 +30,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzf libtool-2.4.7.tar.xz
 - cd libtool-2.4.7
-- ./configure
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - libtool --version 
@@ -82,7 +83,26 @@ Follow the order below as there are dependencies.
 - ./configure 
 - make
 - sudo make install
-- gettext --version
+- ls /usr/local/lib | grep atomic_ops
+```
+
+** STEP SEVEN - Extract, install and verify LIBXML2: **
+```
+- tar -xzvf v2.9.14.tar.gz
+- cd libxml2-2.9.14
+- ./autogen.sh --prefix=/usr/local
+- make
+- sudo make install
+- xml2-config --version
+```
+** STEP EIGHT - Extract, install and verify SQLITE: **
+```
+- tar -xzvf v2.9.14.tar.gz
+- cd libxml2-2.9.14
+- ./autogen.sh --prefix=/usr/local
+- make
+- sudo make install
+- sqlite3 --version
 ```
 
 **I stopped here today**
