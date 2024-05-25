@@ -17,6 +17,7 @@ Follow the order below as there are dependencies.
 - SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
 - LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
 - OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
+- ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
 - PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
