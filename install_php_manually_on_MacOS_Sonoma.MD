@@ -127,7 +127,16 @@ Follow the order below as there are dependencies.
 - sudo make install
 ```
 
-** STEP ELEVEN - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
+** STEP ELEVEN - Extract, install and verify OPENSSL: **
+```
+- tar -xzvf zlib-zlib-1.3.1.tar.gz
+- cd zlib-1.3.1
+- ./configure --prefix=/usr/local/zlib
+- make
+- sudo make install
+```
+
+** STEP TWOELVE - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
 ```
 - export PATH="/usr/local/openssl/bin:$PATH"
 - export LDFLAGS="-L/usr/local/openssl/lib"
