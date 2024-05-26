@@ -18,7 +18,9 @@ Follow the order below as there are dependencies.
 - LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
 - OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
 - ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
+- CURL (curl-7.65.1) https://curl.se/download/curl-7.65.1.tar.gz
 - PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
+- LIBPNG (libpng-1.6.37) https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
@@ -116,6 +118,7 @@ Follow the order below as there are dependencies.
 - ./configure --prefix=/usr/local
 - make
 - sudo make install
+- pkg-config --modversion libcurl
 ```
 
 ** STEP TEN - Extract, install and verify OPENSSL: **
@@ -125,24 +128,69 @@ Follow the order below as there are dependencies.
 - ./config --prefix=/usr/local/openssl
 - make
 - sudo make install
+- pkg-config --modversion openssl
 ```
 
-** STEP ELEVEN - Extract, install and verify OPENSSL: **
+** STEP ELEVEN - Extract, install and verify ZLIB: **
 ```
 - tar -xzvf zlib-zlib-1.3.1.tar.gz
 - cd zlib-1.3.1
 - ./configure --prefix=/usr/local/zlib
 - make
 - sudo make install
+- pkg-config --modversion zlib
 ```
 
-** STEP TWOELVE - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
+
+** STEP TWOELVE - Extract, install and verify LIBPNG: **
+```
+https://downloads.sourceforge.net/libpng/libpng-1.6.37.tar.xz
+- tar -xzvf libpng-1.6.37.tar.gz
+- cd libpng-1.6.37
+- ./configure --prefix=/usr/local/libpng
+- make
+- sudo make install
+- pkg-config --modversion 
+```
+
+** STEP THIRTEEN - Extract, install and verify BZIP2: **
+```
+curl -O https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+- tar -xzvf bzip2-1.0.8.tar.gz
+- cd bzip2-1.0.8
+- make
+- sudo make install PREFIX=/usr/local/bzip2
+```
+
+** STEP FOURTEEN - Extract, install and verify JPEG-9D: **
+```
+curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
+- tar -xzvf jpegsrc.v9d.tar.gz
+- cd jpeg-9d
+- ./configure --prefix=/usr/local/libjpeg
+- make
+- sudo make install
+```
+
+** STEP FIFTEEN - Extract, install and verify : **
+```
+```
+
+** STEP SIXTEEN - Extract, install and verify : **
+```
+```
+
+
+** STEP  - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
 ```
 - export PATH="/usr/local/openssl/bin:$PATH"
 - export LDFLAGS="-L/usr/local/openssl/lib"
 - export CPPFLAGS="-I/usr/local/openssl/include"
 - export PKG_CONFIG_PATH="/usr/local/openssl/lib/pkgconfig"
 - export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+- export LDFLAGS="-L/usr/local/zlib/lib"
+- export CPPFLAGS="-I/usr/local/zlib/include"
+- export PKG_CONFIG_PATH="/usr/local/zlib/lib/pkgconfig"
 ```
 
 ** Reload environment variables: **
