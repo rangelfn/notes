@@ -203,16 +203,65 @@ sudo make install
 re2c --version
 ```
 
-** STEP TWENTY - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
+** STEP TWENTY - Check and Configure file ~/.zshrc:**
 ```
-export PATH="/usr/local/openssl/bin:$PATH"
-export LDFLAGS="-L/usr/local/openssl/lib"
-export CPPFLAGS="-I/usr/local/openssl/include"
-export PKG_CONFIG_PATH="/usr/local/openssl/lib/pkgconfig"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-export LDFLAGS="-L/usr/local/zlib/lib"
-export CPPFLAGS="-I/usr/local/zlib/include"
-export PKG_CONFIG_PATH="/usr/local/zlib/lib/pkgconfig"
+# Check the directories of installed libraries
+find /usr/local -name "*.pc"
+
+# Check paths of installed binaries
+which autoconf automake bison bzip2 cmake curl gettext jpegtran libtool m4 pkg-config re2c sqlite3 php
+
+# Check if libraries are recognized by pkg-config
+pkg-config --modversion libssl libcrypto zlib libcurl libxml-2.0 libpng freetype2 libzip oniguruma libatomic_ops bzip2
+
+# Display all environment variables relevant to the configuration
+echo $PATH
+echo $PKG_CONFIG_PATH
+echo $LD_LIBRARY_PATH
+echo $LDFLAGS
+echo $CPPFLAGS
+echo $OPENSSL_CFLAGS
+echo $OPENSSL_LIBS
+echo $ZLIB_CFLAGS
+echo $ZLIB_LIBS
+```
+
+** Now, open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line: **
+
+```
+# Adicionando diretórios ao PATH
+export PATH="/usr/local/openssl/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/cmake-3.29.3/bin:$PATH"
+
+# Definição de diretórios importantes
+export FLUTTER_HOME=/usr/local/flutter
+export PATH="$FLUTTER_HOME/bin:$PATH"
+
+# Definição de flags para compilação
+export LDFLAGS="-L/usr/local/openssl/lib -L/usr/local/zlib/lib -L/usr/local/lib"
+export CPPFLAGS="-I/usr/local/openssl/include -I/usr/local/zlib/include -I/usr/local/include"
+
+# Adicionando diretório pkgconfig ao PKG_CONFIG_PATH
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/openssl/lib/pkgconfig:/usr/local/zlib/lib/pkgconfig:/usr/local/libpng/lib/pkgconfig:/usr/local/mysql/lib/pkgconfig:/usr/local/apr/lib/pkgconfig:/usr/local/bison/lib/pkgconfig:/usr/local/bzip2/lib/pkgconfig:/usr/local/libjpeg/lib/pkgconfig:/usr/local/freetype/lib/pkgconfig:/usr/local/libzip/lib/pkgconfig:/usr/local/oniguruma/lib/pkgconfig:/usr/local/libatomic_ops/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# Adicionando diretório lib ao LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+
+# Definindo a localização do php.ini
+export PHPRC=/usr/local/php/lib
+
+# Adicionando diretório Python ao PATH
+export PYTHON_CFLAGS="-I/usr/include/python3.12"
+
+# Adicionando diretório de binários do PHP ao PATH
+export PATH="/usr/local/php/bin:$PATH"
+
+# Configuração do OpenSSL
+export OPENSSL_CFLAGS="-I/usr/local/openssl/include"
+export OPENSSL_LIBS="-L/usr/local/openssl/lib -lssl -lcrypto"
+
+# Configuração do Zlib
+export ZLIB_CFLAGS="-I/usr/local/zlib/include"
+export ZLIB_LIBS="-L/usr/local/zlib/lib -lz"
 ```
 
 ** Reload environment variables: **
