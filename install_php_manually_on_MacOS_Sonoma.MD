@@ -28,8 +28,8 @@ Follow the order below as there are dependencies.
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
 - tar -xzvf sqlite-autoconf-3410000.tar.gz
-- ccd sqlite-autoconf-3410000
-- ./configure
+- cd sqlite-autoconf-3410000
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - automake --version 
@@ -49,7 +49,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzf autoconf-2.72.tar.xz
 - cd autoconf-2.72
-- ./configure
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - autoconf --version
@@ -59,7 +59,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzf m4-1.4.19.tar.xz
 - cd m4-1.4.19
-- ./configure 
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - m4 --version
@@ -79,7 +79,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzf gettext-0.22.5.tar.gz
 - cd gettext-0.22.5
-- ./configure 
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - gettext --version
@@ -89,7 +89,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzf libatomic_ops-7.8.2.tar.gz
 - cd libatomic_ops-7.8.2
-- ./configure 
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - ls /usr/local/lib | grep atomic_ops
@@ -122,14 +122,13 @@ Follow the order below as there are dependencies.
 - make
 - sudo make install
 - pkg-config --modversion libiconv
-
 ```
 
 ** STEP TWOELVE - Extract, install and verify OPENSSL: **
 ```
 - tar -xzvf openssl-1.1.1w.tar.gz
 - cd openssl-1.1.1w
-- ./config --prefix=/usr/local/openssl
+- ./config --prefix=/usr/local
 - make
 - sudo make install
 - pkg-config --modversion openssl
@@ -139,7 +138,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzvf zlib-zlib-1.3.1.tar.gz
 - cd zlib-1.3.1
-- ./configure --prefix=/usr/local/zlib
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - pkg-config --modversion zlib
@@ -149,7 +148,7 @@ Follow the order below as there are dependencies.
 ```
 - tar -xzvf libpng-1.6.37.tar.gz
 - cd libpng-1.6.37
-- ./configure --prefix=/usr/local/libpng
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 - pkg-config --modversion libpng
@@ -159,9 +158,9 @@ Follow the order below as there are dependencies.
 ```
 - curl -O https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
 - tar -xzvf bzip2-1.0.8.tar.gz
-- cd bzip2-1.0.8
+- cd bzip2-1.0.8 
 - make
-- sudo make install PREFIX=/usr/local/bzip2
+- sudo make install PREFIX=/usr/local
 - pkg-config --modversion bzip2
 ```
 
@@ -170,21 +169,19 @@ Follow the order below as there are dependencies.
 - curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
 - tar -xzvf jpegsrc.v9d.tar.gz
 - cd jpeg-9d
-- ./configure --prefix=/usr/local/libjpeg
+- ./configure --prefix=/usr/local
 - make
 - sudo make install
 ```
 
 ** STEP SEVENTEEN - Extract, install and verify FREETYPE: **
 ```
-- curl -O https://download.savannah.gnu.org/releases/freetype/freetype-2.10.4.tar.gz
-- tar -xzvf freetype-2.10.4.tar.gz
-- cd freetype-2.10.4
 - tar -xzvf freetype-2.10.4.tar.gz
 - cd freetype-2.10.4
 - ./configure --prefix=/usr/local
 - make 
 - sudo make install
+- pkg-config --modversion freetype2
 ```
 
 ** STEP EIGHTEEN - Extract, install and verify ONIGURUMA: **
@@ -192,7 +189,7 @@ Follow the order below as there are dependencies.
 - tar -xzvf onig-6.9.9.tar.gz
 - cd onig-6.9.9
 - make
-- sudo make install
+- sudo make install PREFIX=/usr/local
 - pkg-config --modversion oniguruma
 ```
 
@@ -202,7 +199,7 @@ Follow the order below as there are dependencies.
 - ./configure --prefix=/usr/local
 - cd re2c-3.1
 - make
-- sudo make install
+- sudo make install 
 - re2c --version
 ```
 
