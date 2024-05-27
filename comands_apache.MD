@@ -15,7 +15,7 @@ sudo apachectl stop
 Description: This command lists all processes running on the system that contain HTTPD in their name. It is useful for checking whether Apache is running and identifying its processes.
 
 ```
-ps aux | grep httpd
+ps aux | grep httpd 
 ```
 
 - Description: This command forces the termination of a specific Apache process. It is useful when the normal stop command (sudo apachectl stop) fails to stop Apache.
@@ -24,6 +24,15 @@ ps aux | grep httpd
 sudo kill -9 <PID_do_Apache>
 ```
 
+- Description: Check which Apache instance is running.
+```
+sudo lsof -i :80
+```
+
+- Description: check the executable path of the httpd process that is running.
+```
+ps -ef | grep httpd
+```
 
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
