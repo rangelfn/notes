@@ -1,4 +1,4 @@
-###**MY COMANDS LINE FOR APACHE**
+###**MY COMANDS APACHE ON MACOS SONOMA**
 
 - Description: This command checks the current running Apache configuration and displays important information such as root directories, log files, and Apache users and groups.
 
