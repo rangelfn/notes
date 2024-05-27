@@ -6,24 +6,24 @@ between release versions, this left me sleepless for days.
 Follow the order below as there are dependencies.
 
 ** REQUIREMENTS LINKS AND RELESES**
-AUTOMAKE (automake-1.16.5) https://ftp.gnu.org/gnu/automake/
-LIBTOOL (libtool-2.4.7) https://ftp.gnu.org/gnu/libtool/
-AUTOCONF (autoconf-2.72) https://ftp.gnu.org/gnu/autoconf/
-M4 (m4-1.4.19) https://ftp.gnu.org/gnu/m4/
-PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
-GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
-LIBATOMIC_OPS (libatomic_ops-7.8.2) https://github.com/ivmai/libatomic_ops/releases
-LIBXML2 (libxml2-2.9.14) https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
-SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
-LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
-OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
-ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
-CURL (curl-7.65.1) https://curl.se/download/curl-7.65.1.tar.gz
-LIBPNG (libpng-1.6.37) https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
-FREETYPE (freetype-2.10.4) https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz
-ONIGURUMA (onig-6.9.9) https://github.com/kkos/oniguruma/archive/refs/tags/v6.9.9.zip
-REC2 (re2c-3.1) https://github.com/skvadrik/re2c/archive/refs/tags/3.1.zip
-PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
+- AUTOMAKE (automake-1.16.5) https://ftp.gnu.org/gnu/automake/
+- LIBTOOL (libtool-2.4.7) https://ftp.gnu.org/gnu/libtool/
+- AUTOCONF (autoconf-2.72) https://ftp.gnu.org/gnu/autoconf/
+- M4 (m4-1.4.19) https://ftp.gnu.org/gnu/m4/
+- PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
+- GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
+- LIBATOMIC_OPS (libatomic_ops-7.8.2) https://github.com/ivmai/libatomic_ops/releases
+- LIBXML2 (libxml2-2.9.14) https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
+- SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
+- LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
+- OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
+- ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
+- CURL (curl-7.65.1) https://curl.se/download/curl-7.65.1.tar.gz
+- LIBPNG (libpng-1.6.37) https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
+- FREETYPE (freetype-2.10.4) https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz
+- ONIGURUMA (onig-6.9.9) https://github.com/kkos/oniguruma/archive/refs/tags/v6.9.9.zip
+- REC2 (re2c-3.1) https://github.com/skvadrik/re2c/archive/refs/tags/3.1.zip
+- PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
