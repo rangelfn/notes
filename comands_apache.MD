@@ -34,6 +34,11 @@ sudo lsof -i :80
 ps -ef | grep httpd
 ```
 
+-Description: Checks if the openssl and curl extensions are enabled:
+```
+php -m | grep -E 'openssl|curl'
+```
+
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
