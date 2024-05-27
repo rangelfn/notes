@@ -19,8 +19,11 @@ Follow the order below as there are dependencies.
 - OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
 - ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
 - CURL (curl-7.65.1) https://curl.se/download/curl-7.65.1.tar.gz
-- PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
 - LIBPNG (libpng-1.6.37) https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
+- FREETYPE (freetype-2.10.4) https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz
+- ONIGURUMA (onig-6.9.9) https://github.com/kkos/oniguruma/archive/refs/tags/v6.9.9.zip
+- REC2 (re2c-3.1) https://github.com/skvadrik/re2c/archive/refs/tags/3.1.zip
+- PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
 
 ** STEP TWO - Extract, install and verify AUTOMAKE:**
 ```
@@ -72,7 +75,7 @@ Follow the order below as there are dependencies.
 - pkg-config --version
 ```
 
-** STEP SIX - Extract, install and verify GETTEXT: **
+** STEP SEVEN - Extract, install and verify GETTEXT: **
 ```
 - tar -xzf gettext-0.22.5.tar.gz
 - cd gettext-0.22.5
@@ -82,7 +85,7 @@ Follow the order below as there are dependencies.
 - gettext --version
 ```
 
-** STEP SIX - Extract, install and verify LIBATOMIC_OPS: **
+** STEP EIGHT - Extract, install and verify LIBATOMIC_OPS: **
 ```
 - tar -xzf libatomic_ops-7.8.2.tar.gz
 - cd libatomic_ops-7.8.2
@@ -92,7 +95,7 @@ Follow the order below as there are dependencies.
 - ls /usr/local/lib | grep atomic_ops
 ```
 
-** STEP SEVEN - Extract, install and verify LIBXML2: **
+** STEP NINE - Extract, install and verify LIBXML2: **
 ```
 - tar -xzvf v2.9.14.tar.gz
 - cd libxml2-2.9.14
@@ -102,7 +105,7 @@ Follow the order below as there are dependencies.
 - xml2-config --version
 ```
 
-** STEP EIGHT - Extract, install and verify SQLITE: **
+** STEP TEN - Extract, install and verify SQLITE: **
 ```
 - tar -xzvf v2.9.14.tar.gz
 - cd libxml2-2.9.14
@@ -112,16 +115,17 @@ Follow the order below as there are dependencies.
 - sqlite3 --version
 ```
 
-** STEP NINE - Extract, install and verify LIBICONV: **
+** STEP ELEVEN - Extract, install and verify LIBICONV: **
 ```
 - cd libiconv-1.16
 - ./configure --prefix=/usr/local
 - make
 - sudo make install
-- pkg-config --modversion libcurl
+- pkg-config --modversion libiconv
+
 ```
 
-** STEP TEN - Extract, install and verify OPENSSL: **
+** STEP TWOELVE - Extract, install and verify OPENSSL: **
 ```
 - tar -xzvf openssl-1.1.1w.tar.gz
 - cd openssl-1.1.1w
@@ -131,7 +135,7 @@ Follow the order below as there are dependencies.
 - pkg-config --modversion openssl
 ```
 
-** STEP ELEVEN - Extract, install and verify ZLIB: **
+** STEP THIRTEEN - Extract, install and verify ZLIB: **
 ```
 - tar -xzvf zlib-zlib-1.3.1.tar.gz
 - cd zlib-1.3.1
@@ -141,30 +145,29 @@ Follow the order below as there are dependencies.
 - pkg-config --modversion zlib
 ```
 
-
-** STEP TWOELVE - Extract, install and verify LIBPNG: **
+** STEP FOURTEEN - Extract, install and verify LIBPNG: **
 ```
-https://downloads.sourceforge.net/libpng/libpng-1.6.37.tar.xz
 - tar -xzvf libpng-1.6.37.tar.gz
 - cd libpng-1.6.37
 - ./configure --prefix=/usr/local/libpng
 - make
 - sudo make install
-- pkg-config --modversion 
+- pkg-config --modversion libpng
 ```
 
-** STEP THIRTEEN - Extract, install and verify BZIP2: **
+** STEP FIFTEN - Extract, install and verify BZIP2: **
 ```
-curl -O https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+- curl -O https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
 - tar -xzvf bzip2-1.0.8.tar.gz
 - cd bzip2-1.0.8
 - make
 - sudo make install PREFIX=/usr/local/bzip2
+- pkg-config --modversion bzip2
 ```
 
-** STEP FOURTEEN - Extract, install and verify JPEG-9D: **
+** STEP SIXTEEN - Extract, install and verify JPEG-9D: **
 ```
-curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
+- curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
 - tar -xzvf jpegsrc.v9d.tar.gz
 - cd jpeg-9d
 - ./configure --prefix=/usr/local/libjpeg
@@ -172,16 +175,38 @@ curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
 - sudo make install
 ```
 
-** STEP FIFTEEN - Extract, install and verify : **
+** STEP SEVENTEEN - Extract, install and verify FREETYPE: **
 ```
+- curl -O https://download.savannah.gnu.org/releases/freetype/freetype-2.10.4.tar.gz
+- tar -xzvf freetype-2.10.4.tar.gz
+- cd freetype-2.10.4
+- tar -xzvf freetype-2.10.4.tar.gz
+- cd freetype-2.10.4
+- ./configure --prefix=/usr/local
+- make 
+- sudo make install
 ```
 
-** STEP SIXTEEN - Extract, install and verify : **
+** STEP EIGHTEEN - Extract, install and verify ONIGURUMA: **
 ```
+- tar -xzvf onig-6.9.9.tar.gz
+- cd onig-6.9.9
+- make
+- sudo make install
+- pkg-config --modversion oniguruma
 ```
 
+** STEP NINETEEN - Extract, install and verify RE2C: **
+```
+- tar -xzvf re2c-3.1.tar.gz
+- ./configure --prefix=/usr/local
+- cd re2c-3.1
+- make
+- sudo make install
+- re2c --version
+```
 
-** STEP  - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
+** STEP TWENTY - Open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line:**
 ```
 - export PATH="/usr/local/openssl/bin:$PATH"
 - export LDFLAGS="-L/usr/local/openssl/lib"
@@ -220,7 +245,8 @@ curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
             --enable-bcmath \
             --enable-ftp \
             --enable-sockets \
-            --enable-opcache
+            --enable-opcache \
+            --disable-opcache-jit
 - make
 - sudo make install
 - php -v
