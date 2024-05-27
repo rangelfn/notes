@@ -221,6 +221,7 @@ Follow the order below as there are dependencies.
 ```
 
 ** FINAL STEP - Extract, install and verify PHP: **
+```
 - tar -xzvf php-8.3.7.tar.gz
 - cd ~/Downloads/php-8.3.7
 - ./configure --with-apxs2=/usr/local/apache2/bin/apxs \
@@ -247,6 +248,7 @@ Follow the order below as there are dependencies.
 - make
 - sudo make install
 - php -v
+```
 
 ** Very good, now you have php installed, if you want to install composer, read this note. **
 
