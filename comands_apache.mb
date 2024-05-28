@@ -39,6 +39,12 @@ ps -ef | grep httpd
 php -m | grep -E 'openssl|curl'
 ```
 
+```
+sudo /usr/local/apache2/bin/apachectl stop
+sudo /usr/local/apache2/bin/apachectl start
+sudo /usr/local/apache2/bin/apachectl restart
+```
+
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
