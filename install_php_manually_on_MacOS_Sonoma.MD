@@ -187,7 +187,7 @@ sudo make install
 cd ..
 ```
 
-# Install Graphic Libraries
+###**Install Graphic Libraries**
 
 # Install libpng
 ```
@@ -200,7 +200,7 @@ cd ..
 ```
 
 # Install freetype
-````
+```
 tar -xvf freetype-2.10.0.tar.gz
 cd freetype-2.10.0
 ./configure --prefix=/usr/local
@@ -234,7 +234,7 @@ cd ..
 ###**Install Other Libraries**
 
 # Install glib
-````
+```
 tar -xvf glib-2.70.2.tar.xz
 cd glib-2.70.2
 ./configure --prefix=/usr/local
