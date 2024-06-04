@@ -196,25 +196,30 @@ pkg-config --modversion oniguruma
 ** STEP NINETEEN - Extract, install and verify RE2C: **
 ```
 tar -xzvf re2c-3.1.tar.gz
+./autogen.sh
 ./configure --prefix=/usr/local
-cd re2c-3.1
 make
-sudo make install 
+sudo make install
 re2c --version
 ```
 
 ** STEP TWENTY - Check and Configure file ~/.zshrc:**
-```
 # Check the directories of installed libraries
+```
 find /usr/local -name "*.pc"
+```
 
 # Check paths of installed binaries
+```
 which autoconf automake bison bzip2 cmake curl gettext jpegtran libtool m4 pkg-config re2c sqlite3 php
-
+```
 # Check if libraries are recognized by pkg-config
+```
 pkg-config --modversion libssl libcrypto zlib libcurl libxml-2.0 libpng freetype2 libzip oniguruma libatomic_ops bzip2
+```
 
 # Display all environment variables relevant to the configuration
+```
 echo $PATH
 echo $PKG_CONFIG_PATH
 echo $LD_LIBRARY_PATH
@@ -227,7 +232,6 @@ echo $ZLIB_LIBS
 ```
 
 ** Now, open your shell's configuration file (~/.zshrc for zsh or ~/.bash_profile for bash) in your preferred text editor and add the following line: **
-
 ```
 # Adicionando diretórios ao PATH
 export PATH="/usr/local/openssl/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/cmake-3.29.3/bin:$PATH"
