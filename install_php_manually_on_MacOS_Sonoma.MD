@@ -212,7 +212,7 @@ cd ..
 ###**Install Networking and Security Libraries**
 
 # Install curl
-````
+```
 tar -xvf curl-7.76.1.tar.gz
 cd curl-7.76.1
 ./configure --prefix=/usr/local
@@ -397,8 +397,6 @@ cd ~/Downloads/php-8.3.7
 make
 sudo make install
 php -v
-```
-
 ```
 
 ** Very good, now you have php installed, if you want to install composer, read this note. **
