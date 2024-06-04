@@ -1,9 +1,9 @@
-### **How to manually build and install PHP in Mac OS Sonoma**
+###**How to manually build and install PHP in Mac OS Sonoma**
 I recommend that you use the releases that specify here, why there are conflicts
 between release versions, this left me sleepless for days. Follow the order below
 as there are dependencies.
 
-###** REQUIREMENTS LINKS AND RELESES**
+###**REQUIREMENTS LINKS AND RELESES**
 
 **Basic Dependencies**
 - AUTOMAKE (automake-1.16.5): https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz
