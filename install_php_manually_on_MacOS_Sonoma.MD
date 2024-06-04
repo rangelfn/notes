@@ -308,6 +308,7 @@ find /usr/local -name "*.pc"
 ```
 which autoconf automake bison bzip2 cmake curl gettext jpegtran libtool m4 pkg-config re2c sqlite3 php
 ```
+
 # Check if libraries are recognized by pkg-config
 ```
 pkg-config --modversion libssl libcrypto zlib libcurl libxml-2.0 libpng freetype2 libzip oniguruma libatomic_ops bzip2
@@ -396,6 +397,8 @@ cd ~/Downloads/php-8.3.7
 make
 sudo make install
 php -v
+```
+
 ```
 
 ** Very good, now you have php installed, if you want to install composer, read this note. **
