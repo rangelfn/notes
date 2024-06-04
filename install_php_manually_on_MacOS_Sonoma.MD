@@ -1,209 +1,304 @@
 ### **How to manually build and install PHP in Mac OS Sonoma**
-STEP ONE - Download Automake, Libtool, Autoconf, M4, Pkg-config,
-Getext, Libatomic_ops, GLib until reaching PHP. I recommend that
-you use the releases that specify here, why there are conflicts
-between release versions, this left me sleepless for days. 
-Follow the order below as there are dependencies.
+I recommend that you use the releases that specify here, why there are conflicts
+between release versions, this left me sleepless for days. Follow the order below
+as there are dependencies.
 
-** REQUIREMENTS LINKS AND RELESES**
-- AUTOMAKE (automake-1.16.5) https://ftp.gnu.org/gnu/automake/
-- LIBTOOL (libtool-2.4.7) https://ftp.gnu.org/gnu/libtool/
-- AUTOCONF (autoconf-2.72) https://ftp.gnu.org/gnu/autoconf/
-- M4 (m4-1.4.19) https://ftp.gnu.org/gnu/m4/
-- PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/
-- GETEXT (gettext-0.22.5) https://www.gnu.org/software/gettext/gettext.html
-- LIBATOMIC_OPS (libatomic_ops-7.8.2) https://github.com/ivmai/libatomic_ops/releases
-- LIBXML2 (libxml2-2.9.14) https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
-- SQLITE_AUTOCONF (sqlite-autoconf-3410000) https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
-- LIBICONV (libiconv-1.16) https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
-- OPENSSL (openssl-1.1.1) https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz
-- ZLIB (zlib-1.3.1) https://www.zlib.net/current/zlib.tar.gz
-- CURL (curl-7.65.1) https://curl.se/download/curl-7.65.1.tar.gz
-- LIBPNG (libpng-1.6.37) https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
-- FREETYPE (freetype-2.10.4) https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz
-- ONIGURUMA (onig-6.9.9) https://github.com/kkos/oniguruma/archive/refs/tags/v6.9.9.zip
-- REC2 (re2c-3.1) https://github.com/skvadrik/re2c/archive/refs/tags/3.1.zip
-- PHP (php-8.3.7) https://www.php.net/distributions/php-8.3.7.tar.gz
+###** REQUIREMENTS LINKS AND RELESES**
 
-** STEP TWO - Extract, install and verify AUTOMAKE:**
-```
-tar -xzvf sqlite-autoconf-3410000.tar.gz
-cd sqlite-autoconf-3410000
-./configure --prefix=/usr/local
-make
-sudo make install
-automake --version 
-```
+**Basic Dependencies**
+- AUTOMAKE (automake-1.16.5): https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz
+- LIBTOOL (libtool-2.4.7): https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz
+- AUTOCONF (autoconf-2.72): https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz
+- M4 (m4-1.4.19): https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz
+- PKG-CONFIG (pkg-config-0.29.2): https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
 
-** STEP THREE - Extract, install and verify LIBTOOL:**
-```
-tar -xzf libtool-2.4.7.tar.xz
-cd libtool-2.4.7
-./configure --prefix=/usr/local
-make
-sudo make install
-libtool --version 
-```
+**Text and Internationalization Libraries**
+- GETTEXT (gettext-0.22.5): https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
+- LIBICONV (libiconv-1.17): https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz
 
-** STEP FOUR - Extract, install and verify AUTOCONF:**
-```
-tar -xzf autoconf-2.72.tar.xz
-cd autoconf-2.72
-./configure --prefix=/usr/local
-make
-sudo make install
-autoconf --version
-```
+**Other Libraries**
+- LIBATOMIC_OPS (libatomic_ops-7.8.2): https://github.com/ivmai/libatomic_ops/releases/download/v7.8.2/libatomic_ops-7.8.2.tar.gz
+- LIBXML2 (libxml2-2.9.14): https://github.com/GNOME/libxml2/archive/refs/tags/v2.9.14.tar.gz
+- SQLITE_AUTOCONF (sqlite-autoconf-3410000): https://www.sqlite.org/2023/sqlite-autoconf-3410000.tar.gz
 
-** STEP FIVE - Extract, install and verify M4: **
+**Compression and Encoding Libraries**
+- BZIP2 (bzip2-1.0.8): https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+- ZLIB (zlib-1.3.1): https://www.zlib.net/zlib-1.3.1.tar.gz
+- LIBZIP (libzip-1.7.3): https://libzip.org/download/libzip-1.7.3.tar.gz
+
+**Networking and Security Libraries**
+- CURL (curl-7.65.1): https://curl.se/download/curl-7.65.1.tar.gz
+- OPENSSL (openssl-3.3.0): https://www.openssl.org/source/openssl-3.3.0.tar.gz
+
+**Graphic Libraries**
+- LIBPNG (libpng-1.6.43): https://download.sourceforge.net/libpng/libpng-1.6.43.tar.xz
+- FREETYPE (freetype-2.10.0): https://download.savannah.gnu.org/releases/freetype/freetype-2.10.0.tar.gz
+
+**Languages and Compilers**
+- BISON (bison-3.8): https://ftp.gnu.org/gnu/bison/bison-3.8.tar.gz
+- CMAKE (cmake-3.29.3): https://cmake.org/files/v3.29/cmake-3.29.3.tar.gz
+- RE2C (re2c-3.1): https://github.com/skvadrik/re2c/archive/refs/tags/3.1.zip
+
+**Other Libraries**
+- GLIB (glib-2.70.2): https://download.gnome.org/sources/glib/2.70/glib-2.70.2.tar.xz
+- ONIGURUMA (onig-6.9.9): https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz
+- JPEGTRAN (jpeg-9d): http://www.ijg.org/files/jpegsrc.v9d.tar.gz
+
+**PHP**
+PHP (php-8.3.7): https://www.php.net/distributions/php-8.3.7.tar.gz
+
+
+###**Install Basic Dependencies**
+
+# Install m4
 ```
-tar -xzf m4-1.4.19.tar.xz
+tar -xvf m4-1.4.19.tar.xz
 cd m4-1.4.19
 ./configure --prefix=/usr/local
 make
 sudo make install
-m4 --version
+cd ..
 ```
 
-** STEP SIX - Extract, install and verify PKG-CONFIG: **
+# Install autoconf
 ```
-tar -xzf pkg-config-0.29.2.tar.gz
+tar -xvf autoconf-2.72.tar.xz
+cd autoconf-2.72
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install automake
+```
+tar -xvf automake-1.16.5.tar.xz
+cd automake-1.16.5
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install libtool
+```
+tar -xvf libtool-2.4.7.tar.xz
+cd libtool-2.4.7
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install pkg-config
+```
+tar -xvf pkg-config-0.29.2.tar.gz
 cd pkg-config-0.29.2
-CFLAGS="-Wno-int-conversion" CXXFLAGS="-Wno-int-conversion" ./configure --prefix="/usr/local" --with-pc-path="/usr/local/lib/pkgconfig" --with-internal-glib
-make
-sudo make install
-pkg-config --version
-```
-
-** STEP SEVEN - Extract, install and verify GETTEXT: **
-```
-tar -xzf gettext-0.22.5.tar.gz
-cd gettext-0.22.5
 ./configure --prefix=/usr/local
 make
 sudo make install
-gettext --version
+cd ..
 ```
 
-** STEP EIGHT - Extract, install and verify LIBATOMIC_OPS: **
+###**Install Languages and Compilers**
+
+# Install bison
 ```
-tar -xzf libatomic_ops-7.8.2.tar.gz
-cd libatomic_ops-7.8.2
+tar -xvf bison-3.8.tar.gz
+cd bison-3.8
 ./configure --prefix=/usr/local
 make
 sudo make install
-ls /usr/local/lib | grep atomic_ops
+cd ..
 ```
 
-** STEP NINE - Extract, install and verify LIBXML2: **
+# Install cmake
 ```
-tar -xzvf v2.9.14.tar.gz
-cd libxml2-2.9.14
-./autogen.sh --prefix=/usr/local
+tar -xvf cmake-3.29.3.tar.gz
+cd cmake-3.29.3
+./bootstrap --prefix=/usr/local
 make
 sudo make install
-xml2-config --version
+cd ..
 ```
 
-** STEP TEN - Extract, install and verify SQLITE: **
+# Install re2c
 ```
-tar -xzvf v2.9.14.tar.gz
-cd libxml2-2.9.14
-./autogen.sh --prefix=/usr/local
-make
-sudo make install
-sqlite3 --version
-```
-
-** STEP ELEVEN - Extract, install and verify LIBICONV: **
-```
-cd libiconv-1.16
+tar -xvf re2c-3.1.tar.gz
+cd re2c-3.1
 ./configure --prefix=/usr/local
 make
 sudo make install
-pkg-config --modversion libiconv
+cd ..
 ```
 
-** STEP TWOELVE - Extract, install and verify OPENSSL: **
+###**Install Compression and Encoding Libraries**
+
+# Install bzip2
 ```
-tar -xzvf openssl-1.1.1w.tar.gz
-cd openssl-1.1.1w
-./config --prefix=/usr/local
+tar -xvf bzip2-1.0.8.tar.gz
+cd bzip2-1.0.8
 make
 sudo make install
-pkg-config --modversion openssl
+cd ..
 ```
 
-** STEP THIRTEEN - Extract, install and verify ZLIB: **
+# Install zlib
 ```
-tar -xzvf zlib-zlib-1.3.1.tar.gz
+tar -xvf zlib.tar.gz
 cd zlib-1.3.1
 ./configure --prefix=/usr/local
 make
 sudo make install
-pkg-config --modversion zlib
+cd ..
 ```
 
-** STEP FOURTEEN Extract, install and verify LIBPNG: **
+# Install libzip
 ```
-tar -xzvf libpng-1.6.37.tar.gz
-cd libpng-1.6.37
+tar -xvf libzip-1.7.3.tar.gz
+cd libzip-1.7.3
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+cd ../..
+```
+
+###**Install Text and Internationalization Libraries**
+
+# Install gettext
+```
+tar -xvf gettext-0.22.5.tar.gz
+cd gettext-0.22.5
 ./configure --prefix=/usr/local
 make
 sudo make install
-pkg-config --modversion libpng
+cd ..
 ```
 
-** STEP FIFTEN - Extract, install and verify BZIP2: **
+# Install libiconv
 ```
-curl -O https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
-tar -xzvf bzip2-1.0.8.tar.gz
-cd bzip2-1.0.8 
+tar -xvf libiconv-1.17.tar.gz
+cd libiconv-1.17
+./configure --prefix=/usr/local
 make
-sudo make install PREFIX=/usr/local
-pkg-config --modversion bzip2
+sudo make install
+cd ..
 ```
 
-** STEP SIXTEEN - Extract, install and verify JPEG-9D: **
+# Install Graphic Libraries
+
+# Install libpng
 ```
-curl -O http://www.ijg.org/files/jpegsrc.v9d.tar.gz
-tar -xzvf jpegsrc.v9d.tar.gz
+tar -xvf libpng-1.6.43.tar.xz
+cd libpng-1.6.43
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install freetype
+````
+tar -xvf freetype-2.10.0.tar.gz
+cd freetype-2.10.0
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+###**Install Networking and Security Libraries**
+
+# Install curl
+````
+tar -xvf curl-7.76.1.tar.gz
+cd curl-7.76.1
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install openssl
+```
+tar -xvf openssl-3.3.0.tar.gz
+cd openssl-3.3.0
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+###**Install Other Libraries**
+
+# Install glib
+````
+tar -xvf glib-2.70.2.tar.xz
+cd glib-2.70.2
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install libatomic_ops
+```
+tar -xvf libatomic_ops-7.8.2.tar.gz
+cd libatomic_ops-7.8.2
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install oniguruma
+```
+tar -xvf onig-6.9.9.tar.gz
+cd onig-6.9.9
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install libxml2
+```
+tar -xvf libxml2-v2.9.14.zip
+cd libxml2-v2.9.14
+./configure --prefix=/usr/local
+make
+sudo make install
+cd ..
+```
+
+# Install jpegtran
+```
+tar -xvf jpegsrc.v9d.tar.gz
 cd jpeg-9d
 ./configure --prefix=/usr/local
 make
 sudo make install
+cd ..
 ```
 
-** STEP SEVENTEEN - Extract, install and verify FREETYPE: **
+# Install sqlite3
 ```
-tar -xzvf freetype-2.10.4.tar.gz
-cd freetype-2.10.4
-./configure --prefix=/usr/local
-make 
-sudo make install
-pkg-config --modversion freetype2
-```
-
-** STEP EIGHTEEN - Extract, install and verify ONIGURUMA: **
-```
-tar -xzvf onig-6.9.9.tar.gz
-cd onig-6.9.9
-make
-sudo make install PREFIX=/usr/local
-pkg-config --modversion oniguruma
-```
-
-** STEP NINETEEN - Extract, install and verify RE2C: **
-```
-tar -xzvf re2c-3.1.tar.gz
-./autogen.sh
+tar -xvf sqlite-autoconf-3410000.tar.gz
+cd sqlite-autoconf-3410000
 ./configure --prefix=/usr/local
 make
 sudo make install
-re2c --version
+cd ..
 ```
 
-** STEP TWENTY - Check and Configure file ~/.zshrc:**
+# Configure Environment Variables
+```
+echo 'export PATH="/usr/local/php/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
 # Check the directories of installed libraries
 ```
 find /usr/local -name "*.pc"
@@ -313,4 +408,3 @@ php -v
 
 > [!WARNING]
 > Critical content demanding immediate user attention due to potential risks.
-
