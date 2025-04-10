@@ -1,0 +1,122 @@
+INSTALL APACHE2
+sudo apt update
+sudo apt install apache2
+sudo systemctl status apache2
+
+GERENCIAR PROCESSO APACHE2
+sudo systemctl stop apache2
+sudo systemctl start apache2
+sudo systemctl restart apache2
+sudo systemctl reload apache2
+sudo systemctl disable apache2
+sudo systemctl enable apache2
+sudo apache2ctl configtest
+
+
+AJUSTAR FIREWALL (Permitir Tráfego Web)
+sudo ufw enable
+sudo ufw default deny
+sudo iptables -L
+
+sudo ufw app list
+sudo ufw app info "Apache Full"
+sudo ufw allow in "Apache Full"
+sudo ufw app list
+
+IDENTIFICAR IP DO SERVIDOR
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+		
+IDENTIRIFAR IPS DO SERVIDOR (Metodo Alternativo)
+sudo apt install curl
+curl http://icanhazip.com
+		
+INSTALANDO MYSQL
+sudo apt install mysql-server
+sudo mysql_secure_installation
+
+INSTALANDO PHP E BIBLIOTECAS
+sudo apt update
+sudo apt install php libapache2-mod-php php-mysql
+
+BIBLIOTECAS ÚTEIS DO PHP
+		sudo apt install -y php php-cli php-common php-gd php-mbstring php-intl php-xml php-zip php-pear libapache2-mod-php
+		sudo apt install -y php  php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
+		sudo apt install -y php7.4-cli php7.4-common php7.4-json php7.4-opcache php7.4-mysql php7.4-mbstring php7.4-zip composer php7.4-curl php7.4-fpm php7.4-xsl php7.4-xml 
+		sudo apt-get install -y php7.4-gmp php7.4-xmlrpc php7.4-gd php7.4-imap
+		sudo apt-get install -y libfbclient2 libgd-dev libib-util libedit-dev zip libc-client-dev libkrb5-dev
+
+
+INDEXANDO ARQUIVOS PHP
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+
+INSTALL SSL
+sudo apt install certbot python3-certbot-apache
+sudo nano /etc/apache2/sites-available/000default.conf
+
+INSTALL PHPMYADMIN
+sudo apt update
+sudo apt install phpmyadmin php-mbstring php-gettext
+
+INSTALL COMPOSER
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+
+ADICIONAR PARA RESPONDER A UM DOMÍNIO
+sudo nano /etc/apache2/sites-available/nomedominio.com
+
+Copie, configure e cole o código abaixo
+
+<VirtualHost *:80>
+        ServerName clubmxlife.com
+        ServerAlias www.clubmxlife.com
+        ServerAdmin suporte@clubmxlife.com
+        DocumentRoot /var/www/clubmxlife
+        DirectoryIndex index.php index.html
+
+        ErrorLog ${APACHE_LOG_DIR}/clubmxlife.com_error.log
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/clubmxlife.com_access.log combined
+ 				
+			<Directory /var/www/nomedominio.com/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+                Require all granted
+        </Directory>
+	RewriteEngine on
+	RewriteCond %{SERVER_NAME} =nomedominio.com [OR]
+	RewriteCond %{SERVER_NAME} =www.nomedominio.com
+	RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+</VirtualHost>
+
+sudo a2ensite dominio.com.br
+sudo systemctl reload apache2
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+INSTALAR COMPOSER
+sudo apt-get update
+sudo apt install curl wget php-cli php-zip php-mbstring git unzip
+
+
+INSTALAR MARIADB
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository "deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.liquidtelecom.com/repo/10.4/ubuntu $(lsb_release -cs) main"
+sudo apt update
+sudo apt -y install mariadb-server mariadb-client
+
+INSTALAR E CONFIGURAR PHPMYADMIN
+Instalação e configuração do phpMyAdmin:
+sudo apt install -y phpmyadmin
+Marque a opção apache2 usando a tecla ESPAÇO e mover até o OK com a tecla TAB.
+Depois selecione sim:
+Caso necessite, utilize selecione uma senha para phpMyAdmin. Para testá-lo no navegador, digite na barra de endereços: localhost/phpmyadmin
+
